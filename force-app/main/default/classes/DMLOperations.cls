@@ -271,13 +271,9 @@ public with sharing class DMLOperations {
         }
 
         List<Account> existingAccountList = [SELECT Id, Name FROM Account WHERE Name in :contactLastNames];
-
         List<Account> newAccountList = new List<Account>();
-
         List<Contact> contactsNeedsAccountIdUpdated = new List<Contact>();
-
         List<Contact> contactsNeedsNewAccount = new List<Contact>();
-
 
         // Create a list of of Contacts that need to have Account Id updated. 
         if (!existingAccountList.isEmpty()) {
